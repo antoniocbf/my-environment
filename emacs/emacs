@@ -1,7 +1,7 @@
 ;; +--------------------------------------------+
 ;; |           Load Path Configuration          |
 ;; +--------------------------------------------+
-(progn (cd "~/l30-emacs") (normal-top-level-add-subdirs-to-load-path))
+(progn (cd "~/l30-environment") (normal-top-level-add-subdirs-to-load-path))
 ;; +--------------------------------------------+
 ;; |           Custom Variables                 |
 ;; +--------------------------------------------+
@@ -62,7 +62,7 @@
 ;;
 (require 'yasnippet)
 (yas/initialize)
-(yas/load-directory "~/l30-emacs/snippets/")
+(yas/load-directory "~/l30-environment/emacs/snippets/")
 ;;
 (require 'ido)
 (ido-mode t)

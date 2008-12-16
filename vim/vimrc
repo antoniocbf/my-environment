@@ -31,12 +31,12 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
-autocmd BufNewFile,BufRead *.xml source ~/l30-emacs/vim/ftplugin/xml.vim
+autocmd BufNewFile,BufRead *.xml source ~/l30-environment/vim/ftplugin/xml.vim
 
 colorscheme metacosm
 set textwidth=0
 set guifont=DejaVu\ Sans\ Mono\ 10
-set tags+=~/l30-emacs/.vim/tags/python.ctags
+"set tags+=~/l30-emacs/.vim/tags/python.ctags
 set tabstop=4
 set shiftwidth=4
 set encoding=utf-8
