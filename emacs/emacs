@@ -1,0 +1,132 @@
+;; +--------------------------------------------+
+;; |           Load Path Configuration          |
+;; +--------------------------------------------+
+(progn (cd "~/l30-emacs") (normal-top-level-add-subdirs-to-load-path))
+;; +--------------------------------------------+
+;; |           Custom Variables                 |
+;; +--------------------------------------------+
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(blink-cursor-mode nil)
+ '(column-number-mode t)
+ '(display-time-mode t)
+ '(global-hl-line-mode t)
+ '(show-paren-mode t)
+ '(fringe-mode (quote (nil . 0)) nil (fringe))
+ '(indent-tabs-mode nil)
+ '(inhibit-startup-screen t)
+ '(save-place t nil (saveplace))
+ '(scroll-bar-mode nil)
+ '(size-indication-mode t)
+ '(cua-mode t)
+ '(cua-enable-cua-keys nil)
+; '(default-justification `full)
+ '(tab-always-indent t)
+ '(tab-stop-list (quote (4 8 12 16 20 24 28 32 36 40 44 48 52 56)))
+ '(tool-bar-mode nil)
+ '(transient-mark-mode t)
+ '(tooltip-mode nil))
+;; +--------------------------------------------+
+;; |           Sets                             |
+;; +--------------------------------------------+
+(setq default-major-mode 'text-mode)
+(setq-default fill-column 80)
+;;
+;; +--------------------------------------------+
+;; |           Hooks                            |
+;; +--------------------------------------------+
+(add-hook 'text-mode-hook 'longlines-mode)
+;;
+;; +--------------------------------------------+
+;; |           Autoloaded libraries             |
+;; +--------------------------------------------+
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )
+(require 'color-theme)
+(color-theme-deep-blue)
+;;
+(require 'pymacs)
+(pymacs-load "ropemacs" "rope-")
+(autoload 'pymacs-apply "pymacs")
+(autoload 'pymacs-call "pymacs")
+(autoload 'pymacs-eval "pymacs" nil t)
+(autoload 'pymacs-exec "pymacs" nil t)
+(autoload 'pymacs-load "pymacs" nil t)
+;;
+(require 'yasnippet)
+(yas/initialize)
+(yas/load-directory "~/l30-emacs/snippets/")
+;;
+(require 'ido)
+(ido-mode t)
+;;
+(require 'psvn)
+;;
+;; +--------------------------------------------+
+;; |                 Shortcuts                  |
+;; +--------------------------------------------+
+;;
+;; :: emacs shortcuts ::
+;; ---------------------
+(windmove-default-keybindings 'meta) ; [Move between frames using meta]
+(global-set-key [C-insert] 'clipboard-kill-ring-save)
+(global-set-key [S-insert] 'clipboard-yank)
+(global-set-key [M-left] 'previous-buffer)
+(global-set-key [M-right] 'next-buffer) 
+(global-set-key [f5] 'bookmark-set) 
+(global-set-key [f6] 'bookmark-jump) 
+(global-set-key [f7] 'list-bookmarks) 
+(global-set-key "\M-s" 'sort-lines)
+(global-set-key "\C-f" 'query-replace)
+;;
+;; :: svn shortcuts ::
+;; -------------------
+(global-set-key "\M-v" 'svn-status)
+;;
+;; :: rope shortcuts ::
+;; --------------------
+;; M-/               rope-code-assist
+;; M-?               rope-lucky-assist
+;; C-c g             rope-goto-definition
+;; C-c d             rope-show-doc
+;; C-c f             rope-find-occurrences
+;;
+;; :: CUA rectangle support
+;; --------------------
+;; [M-a] aligns all words at the left edge of the rectangle
+;; [M-b] fills the rectangle with blanks (tabs and spaces)
+;; [M-c] closes the rectangle by removing all blanks at the left edge
+;;       of the rectangle
+;; [M-f] fills the rectangle with a single character (prompt)
+;; [M-i] increases the first number found on each line of the rectangle
+;;       by the amount given by the numeric prefix argument (default 1)
+;;       It recognizes 0x... as hexadecimal numbers
+;; [M-k] kills the rectangle as normal multi-line text (for paste)
+;; [M-l] downcases the rectangle
+;; [M-m] copies the rectangle as normal multi-line text (for paste)
+;; [M-n] fills each line of the rectangle with increasing numbers using
+;;       a supplied format string (prompt)
+;; [M-o] opens the rectangle by moving the highlighted text to the
+;;       right of the rectangle and filling the rectangle with blanks.
+;; [M-p] toggles virtual straight rectangle edges
+;; [M-P] inserts tabs and spaces (padding) to make real straight edges
+;; [M-q] performs text filling on the rectangle
+;; [M-r] replaces REGEXP (prompt) by STRING (prompt) in rectangle
+;; [M-R] reverse the lines in the rectangle
+;; [M-s] fills each line of the rectangle with the same STRING (prompt)
+;; [M-t] performs text fill of the rectangle with TEXT (prompt)
+;; [M-u] upcases the rectangle
+;; [M-|] runs shell command on rectangle
+;; [M-'] restricts rectangle to lines with CHAR (prompt) at left column
+;; [M-/] restricts rectangle to lines matching REGEXP (prompt)
+;; [C-?] Shows a brief list of the above commands.
+;; [M-C-up] and [M-C-down] scrolls the lines INSIDE the rectangle up
+;; and down; lines scrolled outside the top or bottom of the rectangle
+;; are lost, but can be recovered using [C-z]
