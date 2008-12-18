@@ -2,14 +2,14 @@
 " Snippet section *
 " *****************
 
-"python << EOF
-"import os
-"import sys
-"import vim
-"for p in sys.path:
-"	if os.path.isdir(p):
-"		vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
-"EOF
+python << EOF
+import os
+import sys
+import vim
+for p in sys.path:
+	if os.path.isdir(p):
+		vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
+EOF
 
 " ****************
 " Script section *
@@ -23,8 +23,8 @@
 " ****************
 
 syntax on
-"autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType python set omnifunc=pysmell#Complete
+"autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
@@ -33,7 +33,11 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd BufNewFile,BufRead *.xml source ~/l30-environment/vim/ftplugin/xml.vim
 
+let ropevim_vim_completion=1
+let ropevim_guess_project=1
+
 colorscheme metacosm
+set tags+=$HOME/.vim/tags/python.ctags
 set textwidth=0
 set guifont=DejaVu\ Sans\ Mono\ 10
 set tabstop=4
