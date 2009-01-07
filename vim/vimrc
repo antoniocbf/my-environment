@@ -54,6 +54,8 @@ set incsearch      " Incremental search
 set ruler
 set linebreak
 set nocompatible
+set guioptions-=T  " Turn toolbar off
+set virtualedit=all
 "set showcmd       " Show (partial) command in status line.
 "set smartcase     " Do smart case matching
 
@@ -81,4 +83,8 @@ nnoremap X :q!<CR>
 nnoremap <silent><F8> :TlistToggle<CR>
 
 inoremap <C-Space> <C-x><C-o>
+
+map <C-J> <C-W>j<C-W>_
+map <C-K> <C-W>k<C-W>_
+set wmh=0
 
