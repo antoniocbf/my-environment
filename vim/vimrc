@@ -2,14 +2,14 @@
 " Snippet section *
 " *****************
 
-python << EOF
-import os
-import sys
-import vim
-for p in sys.path:
-	if os.path.isdir(p):
-		vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
-EOF
+" python << EOF
+" import os
+" import sys
+" import vim
+" for p in sys.path:
+" 	if os.path.isdir(p):
+" 		vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
+" EOF
 
 " ****************
 " Script section *
@@ -23,8 +23,8 @@ EOF
 " ****************
 
 syntax on
-autocmd FileType python set omnifunc=pysmell#Complete
-"autocmd FileType python set omnifunc=pythoncomplete#Complete
+"autocmd FileType python set omnifunc=pysmell#Complete
+autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
@@ -37,7 +37,7 @@ let ropevim_vim_completion=1
 let ropevim_guess_project=1
 
 colorscheme metacosm
-set tags+=$HOME/.vim/tags/python.ctags
+"set tags+=$HOME/.vim/tags/python.ctags
 set textwidth=0
 set guifont=DejaVu\ Sans\ Mono\ 10
 set tabstop=4
@@ -82,7 +82,9 @@ nnoremap x :q<CR>
 nnoremap X :q!<CR>
 nnoremap <silent><F8> :TlistToggle<CR>
 
-inoremap <C-Space> <C-x><C-o>
+" inoremap <C-Space> <C-x><C-o>
+imap <C-Space> <ESC>l:RopeCodeAssist<CR>
+nmap <C-Space> :RopeCodeAssist<CR>
 
 map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
