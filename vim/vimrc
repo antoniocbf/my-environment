@@ -1,30 +1,26 @@
-" *****************
-" Snippet section *
-" *****************
-
-" python << EOF
-" import os
-" import sys
-" import vim
-" for p in sys.path:
-" 	if os.path.isdir(p):
-" 		vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
-" EOF
-
 " ****************
 " Script section *
 " ****************
 
+" Add source navigation on python core livraries
 "
-"
+python << EOF
+import os
+import sys
+import vim
+for p in sys.path:
+	if os.path.isdir(p):
+		vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
+EOF
+
 
 " ****************
 " Config section *
 " ****************
 
 syntax on
-autocmd FileType python set omnifunc=pysmell#Complete
-"autocmd FileType python set omnifunc=pythoncomplete#Complete
+"autocmd FileType python set omnifunc=pysmell#Complete
+autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
@@ -41,8 +37,8 @@ let g:fuzzy_ignore = "*.bak,*.pyc,*.py~,*.pdf,*.so,*.gif,*.jpg,*.flv,*.class,*.p
 let g:fuzzy_ceiling = 50000
 let g:fuzzy_enumerating_limit = 25
 
-colorscheme metacosm
 "set tags+=$HOME/.vim/tags/python.ctags
+colorscheme metacosm
 set textwidth=0
 set guifont=Monospace\ 10
 set tabstop=4
@@ -77,9 +73,6 @@ nmap j gj
 nmap k gk
 imap jj <ESC>
 
-"imap <silent><Down> <ESC>gja
-"imap <silent><Up> <ESC>gka
-
 nmap <F2> :NERDTreeToggle<CR>
 nmap <F3> :FuzzyFinderTextMate<CR>
 
@@ -88,7 +81,6 @@ nnoremap x :q<CR>
 nnoremap X :q!<CR>
 nnoremap <silent><F8> :TlistToggle<CR>
 
-" inoremap <C-Space> <C-x><C-o>
 imap <C-Space> <ESC>l:RopeCodeAssist<CR>
 nmap <C-Space> :RopeCodeAssist<CR>
 
