@@ -23,8 +23,8 @@
 " ****************
 
 syntax on
-"autocmd FileType python set omnifunc=pysmell#Complete
-autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType python set omnifunc=pysmell#Complete
+"autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
@@ -35,6 +35,11 @@ autocmd BufNewFile,BufRead *.xml source ~/l30-environment/vim/ftplugin/xml.vim
 
 let ropevim_vim_completion=1
 let ropevim_guess_project=1
+
+let g:fuzzy_roots = ['./dev', './l30-environment']
+let g:fuzzy_ignore = "*.bak,*.pyc,*.py~,*.pdf,*.so,*.gif,*.jpg,*.flv,*.class,*.png,*/tools/*,*/docs/*" 
+let g:fuzzy_ceiling = 50000
+let g:fuzzy_enumerating_limit = 25
 
 colorscheme metacosm
 "set tags+=$HOME/.vim/tags/python.ctags
@@ -68,14 +73,15 @@ map <silent><C-Right> <C-]>
 vmap <C-y> "+y
 nmap <C-s> :w<CR>
 imap <C-s> <ESC>:w<CR>a
-nmap <Down> gj
-nmap <Up> gk
+nmap j gj
+nmap k gk
+imap jj <ESC>
 
-imap <silent><Down> <ESC>gja
-imap <silent><Up> <ESC>gka
+"imap <silent><Down> <ESC>gja
+"imap <silent><Up> <ESC>gka
 
-nmap <C-o> :NERDTree<CR>
-imap <C-o> <ESC>:NERDTree<CR>
+nmap <F2> :NERDTreeToggle<CR>
+nmap <F3> :FuzzyFinderTextMate<CR>
 
 nmap <silent><C-n> :tabnew<CR>
 nnoremap x :q<CR>
