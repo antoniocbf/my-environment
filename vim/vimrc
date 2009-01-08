@@ -44,7 +44,7 @@ let g:fuzzy_enumerating_limit = 25
 colorscheme metacosm
 "set tags+=$HOME/.vim/tags/python.ctags
 set textwidth=0
-set guifont=DejaVu\ Sans\ Mono\ 10
+set guifont=Monospace\ 10
 set tabstop=4
 set shiftwidth=4
 set encoding=utf-8
@@ -95,4 +95,3 @@ nmap <C-Space> :RopeCodeAssist<CR>
 map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
 set wmh=0
-
