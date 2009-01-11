@@ -3,15 +3,32 @@
 " ****************
 
 " Add source navigation on python core livraries
-"
+
+if has("python")
 python << EOF
 import os
 import sys
 import vim
 for p in sys.path:
-	if os.path.isdir(p):
-		vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
+    if os.path.isdir(p):
+        vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
 EOF
+endif
+
+
+" *********************
+" OS specific section *
+" *********************
+
+if has("gui_gtk2")
+    set guifont=Monospace\ 10
+    let vimpath = "~/l30-environment/vim"
+    let cfgfile = ".vimrc"
+elseif has("gui_win32")
+    set guifont=Consolas:h12
+    let vimpath = "~/vimfiles"
+    let cfgfile = "_vimrc"
+end
 
 
 " ****************
@@ -27,7 +44,7 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
-autocmd BufNewFile,BufRead *.xml source ~/l30-environment/vim/ftplugin/xml.vim
+exec "autocmd BufNewFile,BufRead *.xml source ".vimpath."/ftplugin/xml.vim"
 
 let ropevim_vim_completion=1
 let ropevim_guess_project=1
@@ -39,8 +56,8 @@ let g:fuzzy_enumerating_limit = 25
 
 "set tags+=$HOME/.vim/tags/python.ctags
 colorscheme metacosm
+set anti
 set textwidth=0
-set guifont=Monospace\ 10
 set tabstop=4
 set shiftwidth=4
 set encoding=utf-8
@@ -75,6 +92,7 @@ imap jj <ESC>
 
 nmap <F2> :NERDTreeToggle<CR>
 nmap <F3> :FuzzyFinderTextMate<CR>
+exec "nmap <F5> :source ~/".cfgfile."<CR>"
 
 nmap <silent><C-n> :tabnew<CR>
 nnoremap x :q<CR>
@@ -87,4 +105,3 @@ nmap <C-Space> :RopeCodeAssist<CR>
 map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
 set wmh=0
-
