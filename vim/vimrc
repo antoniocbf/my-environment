@@ -49,7 +49,7 @@ exec "autocmd BufNewFile,BufRead *.xml source ".vimpath."/ftplugin/xml.vim"
 let ropevim_vim_completion=1
 let ropevim_guess_project=1
 
-let g:fuzzy_roots = ['./dev', './l30-environment']
+let g:fuzzy_roots = ['./dev/java/workspace', './dev/python/workspace', './l30-environment']
 let g:fuzzy_ignore = "*.bak,*.pyc,*.py~,*.pdf,*.so,*.gif,*.jpg,*.flv,*.class,*.png,*/tools/*,*/docs/*" 
 let g:fuzzy_ceiling = 50000
 let g:fuzzy_enumerating_limit = 25
@@ -90,8 +90,8 @@ nmap j gj
 nmap k gk
 imap jj <ESC>
 
-nmap <F2> :NERDTreeToggle<CR>
-nmap <F3> :FuzzyFinderTextMate<CR>
+nmap <silent><F2> :NERDTreeToggle<CR>
+nmap <silent><F3> :FuzzyFinderTextMate<CR>
 exec "nmap <F5> :source ~/".cfgfile."<CR>"
 
 nmap <silent><C-n> :tabnew<CR>
@@ -99,8 +99,8 @@ nnoremap x :q<CR>
 nnoremap X :q!<CR>
 nnoremap <silent><F8> :TlistToggle<CR>
 
-imap <C-Space> <ESC>l:RopeCodeAssist<CR>
-nmap <C-Space> :RopeCodeAssist<CR>
+imap <silent><C-Space> <ESC>l:RopeCodeAssist<CR>
+nmap <silent><C-Space> :RopeCodeAssist<CR>
 
 map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
