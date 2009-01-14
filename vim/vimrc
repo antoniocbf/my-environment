@@ -74,6 +74,7 @@ set linebreak
 set nocompatible
 set guioptions-=T  " Turn toolbar off
 set virtualedit=all
+set cursorline     " Highlight current line
 "set showcmd       " Show (partial) command in status line.
 "set smartcase     " Do smart case matching
 
@@ -105,3 +106,4 @@ nmap <silent><C-Space> :RopeCodeAssist<CR>
 map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
 set wmh=0
+
