@@ -75,8 +75,7 @@ set nocompatible
 set guioptions-=T  " Turn toolbar off
 set virtualedit=all
 set cursorline     " Highlight current line
-"set showcmd       " Show (partial) command in status line.
-"set smartcase     " Do smart case matching
+set smartcase      " Do smart case matching
 
 " *****************
 " Mapping section *
