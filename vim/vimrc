@@ -12,6 +12,11 @@ import vim
 for p in sys.path:
     if os.path.isdir(p):
         vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
+
+def pythonExec():
+    buffer = vim.current.buffer
+
+
 EOF
 endif
 
@@ -46,9 +51,15 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 exec "autocmd BufNewFile,BufRead *.xml source ".vimpath."/ftplugin/xml.vim"
 
+" AutoComplPop configuration
+let g:AutoComplPop_NotEnableAtStartup = 0
+let g:AutoComplPop_MappingDriven = 1
+
+" Ropevim configuration
 let ropevim_vim_completion=1
 let ropevim_guess_project=1
 
+" FuzzyFinder configuration
 let g:fuzzy_roots = ['./dev/java/workspace', './dev/python/workspace', './l30-environment']
 let g:fuzzy_ignore = "*.bak,*.pyc,*.py~,*.pdf,*.so,*.gif,*.jpg,*.flv,*.class,*.png,*/tools/*,*/docs/*" 
 let g:fuzzy_ceiling = 50000
@@ -92,6 +103,7 @@ imap jj <ESC>
 
 nmap <silent><F2> :NERDTreeToggle<CR>
 nmap <silent><F3> :FuzzyFinderTextMate<CR>
+nmap <silent><F9> :python pyterm(vim.current.buffer.name, 0)<CR>
 exec "nmap <F5> :source ~/".cfgfile."<CR>"
 
 nmap <silent><C-n> :tabnew<CR>
