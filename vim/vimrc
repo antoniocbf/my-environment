@@ -15,7 +15,7 @@ for p in sys.path:
 
 def pythonExec():
     buffer = vim.current.buffer
-
+    print buffer.name
 
 EOF
 endif
@@ -89,7 +89,7 @@ set cursorline     " Highlight current line
 set smartcase      " Do smart case matching
 
 " *****************
-" Mapping section *
+" Mapping section *                    
 " *****************
 
 map <silent><C-Left> <C-T>
@@ -97,9 +97,9 @@ map <silent><C-Right> <C-]>
 vmap <C-y> "+y
 nmap <C-s> :w<CR>
 imap <C-s> <ESC>:w<CR>a
-nmap j gj
-nmap k gk
-imap jj <ESC>
+inoremap <C-k> <ESC>
+nnoremap j gj
+nnoremap k gk
 
 nmap <silent><F2> :NERDTreeToggle<CR>
 nmap <silent><F3> :FuzzyFinderTextMate<CR>
