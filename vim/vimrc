@@ -95,6 +95,7 @@ set smartcase      " Do smart case matching
 map <silent><C-Left> <C-T>
 map <silent><C-Right> <C-]>
 vmap <C-y> "+y
+vmap <silent><C-s> :sort<CR>
 nmap <C-s> :w<CR>
 imap <C-s> <ESC>:w<CR>a
 inoremap <C-k> <ESC>
