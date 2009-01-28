@@ -14,12 +14,12 @@ for p in sys.path:
         vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
 
 def pythonExec():
-    buffer = vim.current.buffer
-    print buffer.name
+    buf= vim.current.buffer
+    sys._stdout = sys.stdout
+    exec('\n'.join(buf))
 
 EOF
 endif
-
 
 " *********************
 " OS specific section *
@@ -97,20 +97,22 @@ map <silent><C-Right> <C-]>
 vmap <C-y> "+y
 vmap <silent><C-s> :sort<CR>
 nmap <C-s> :w<CR>
-imap <C-s> <ESC>:w<CR>a
+imap <silent><C-s> <ESC>:w<CR>a
+imap <silent><C-Del> <ESC>dea
 inoremap <C-k> <ESC>
 nnoremap j gj
 nnoremap k gk
 
-nmap <silent><F2> :NERDTreeToggle<CR>
-nmap <silent><F3> :FuzzyFinderTextMate<CR>
-nmap <silent><F9> :python pyterm(vim.current.buffer.name, 0)<CR>
+nnoremap <silent><F2> :NERDTreeToggle<CR>
+nnoremap <silent><F3> :FuzzyFinderTextMate<CR>
+nnoremap <silent><F8> :TlistToggle<CR>
+nmap <silent><F9> :call Bexec()<CR>
+vmap <silent><F9> :call BexecVisual()<CR>
 exec "nmap <F5> :source ~/".cfgfile."<CR>"
 
 nmap <silent><C-n> :tabnew<CR>
 nnoremap x :q<CR>
 nnoremap X :q!<CR>
-nnoremap <silent><F8> :TlistToggle<CR>
 
 imap <silent><C-Space> <ESC>l:RopeCodeAssist<CR>
 nmap <silent><C-Space> :RopeCodeAssist<CR>
