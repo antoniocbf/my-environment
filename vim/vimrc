@@ -40,7 +40,6 @@ end
 " Config section *
 " ****************
 
-syntax on
 "autocmd FileType python set omnifunc=pysmell#Complete
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
@@ -70,23 +69,27 @@ colorscheme metacosm
 set anti
 set textwidth=0
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
 set encoding=utf-8
 set expandtab
+set backspace=indent,eol,start
 set smarttab
 set smartindent
 set showmode
-set showmatch      " Show matching brackets.
-set autowrite      " Automatically save before commands like :next and :make
-set ignorecase     " Do case insensitive matching
-set incsearch      " Incremental search
+set showmatch       " Show matching brackets.
+set autowrite       " Automatically save before commands like :next and :make
+set ignorecase      " Do case insensitive matching
+set incsearch       " Incremental search
+set wmh=0           " set winminheight to 0
 set ruler
 set linebreak
 set nocompatible
-set guioptions-=T  " Turn toolbar off
+set guioptions-=T   " Turn toolbar off
 set virtualedit=all
-set cursorline     " Highlight current line
-set smartcase      " Do smart case matching
+set cursorline      " Highlight current line
+set smartcase       " Do smart case matching
+syntax on
 
 " *****************
 " Mapping section *                    
@@ -116,8 +119,7 @@ nnoremap X :q!<CR>
 
 imap <silent><C-Space> <ESC>l:RopeCodeAssist<CR>
 nmap <silent><C-Space> :RopeCodeAssist<CR>
+nnoremap <silent>, :call RopeShowDoc()<CR>
 
 map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
-set wmh=0
-
