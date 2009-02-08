@@ -50,6 +50,10 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 exec "autocmd BufNewFile,BufRead *.xml source ".vimpath."/ftplugin/xml.vim"
 
+augroup mkd
+ autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:>
+augroup END
+
 " AutoComplPop configuration
 let g:AutoComplPop_NotEnableAtStartup = 0
 let g:AutoComplPop_MappingDriven = 1
