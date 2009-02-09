@@ -12,12 +12,6 @@ import vim
 for p in sys.path:
     if os.path.isdir(p):
         vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
-
-def pythonExec():
-    buf= vim.current.buffer
-    sys._stdout = sys.stdout
-    exec('\n'.join(buf))
-
 EOF
 endif
 
@@ -51,7 +45,8 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 exec "autocmd BufNewFile,BufRead *.xml source ".vimpath."/ftplugin/xml.vim"
 
 augroup mkd
- autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:>
+    autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:>
+    autocmd BufRead *.md set ai formatoptions=tcroqn2 comments=n:>
 augroup END
 
 " AutoComplPop configuration
@@ -63,7 +58,7 @@ let ropevim_vim_completion=1
 let ropevim_guess_project=1
 
 " FuzzyFinder configuration
-let g:fuzzy_roots = ['./dev/java/workspace', './dev/python/workspace', './l30-environment']
+let g:fuzzy_roots = ['./dev/java/workspace', './dev/python/workspace', './environment']
 let g:fuzzy_ignore = "*.bak,*.pyc,*.py~,*.pdf,*.so,*.gif,*.jpg,*.flv,*.class,*.png,*/tools/*,*/docs/*" 
 let g:fuzzy_ceiling = 50000
 let g:fuzzy_enumerating_limit = 25
