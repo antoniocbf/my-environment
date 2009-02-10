@@ -91,7 +91,6 @@ set virtualedit=all
 set cursorline      " Highlight current line
 set smartcase       " Do smart case matching
 syntax on
-filetype on
 
 " *****************
 " Mapping section *                    
