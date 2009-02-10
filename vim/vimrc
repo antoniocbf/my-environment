@@ -29,7 +29,6 @@ elseif has("gui_win32")
     let cfgfile = "_vimrc"
 end
 
-
 " ****************
 " Config section *
 " ****************
@@ -44,9 +43,10 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 exec "autocmd BufNewFile,BufRead *.xml source ".vimpath."/ftplugin/xml.vim"
 
+" Markdown syntax
 augroup mkd
-    autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:>
-    autocmd BufRead *.md set ai formatoptions=tcroqn2 comments=n:>
+  autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:>
+  autocmd BufRead *.md  set ai formatoptions=tcroqn2 comments=n:>
 augroup END
 
 " AutoComplPop configuration
