@@ -91,6 +91,7 @@ set virtualedit=all
 set cursorline      " Highlight current line
 set smartcase       " Do smart case matching
 syntax on
+filetype on
 
 " *****************
 " Mapping section *                    
@@ -118,6 +119,8 @@ exec "nmap <F5> :source ~/".cfgfile."<CR>"
 nmap <silent><C-n> :tabnew<CR>
 nnoremap x :q<CR>
 nnoremap X :q!<CR>
+
+inoremap <C-x> <ESC>:call EnhancedCommentify('yes', 'guess')<CR>ji
 
 imap <silent><C-Space> <ESC>l:RopeCodeAssist<CR>
 nmap <silent><C-Space> :RopeCodeAssist<CR>
