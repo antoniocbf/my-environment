@@ -119,7 +119,8 @@ nmap <silent><C-n> :tabnew<CR>
 nnoremap x :q<CR>
 nnoremap X :q!<CR>
 
-inoremap <C-x> <ESC>:call EnhancedCommentify('yes', 'guess')<CR>ji
+"map <C-x> <ESC>:call EnhancedCommentify('yes', 'guess')<CR>ji
+vmap <C-/> <ESC>:call EnhancedCommentify('yes', 'guess')<CR>
 
 imap <silent><C-Space> <ESC>l:RopeCodeAssist<CR>
 nmap <silent><C-Space> :RopeCodeAssist<CR>
