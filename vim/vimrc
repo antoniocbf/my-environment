@@ -62,6 +62,10 @@ let g:fuzzy_roots = ['./dev/java/workspace', './dev/python/workspace', './enviro
 let g:fuzzy_ignore = "*.bak,*.pyc,*.py~,*.pdf,*.so,*.gif,*.jpg,*.flv,*.class,*.png,*/tools/*,*/docs/*" 
 let g:fuzzy_ceiling = 50000
 let g:fuzzy_enumerating_limit = 25
+ 
+ 
+" EnhancedCommentify configuration
+let g:EnhCommentifyUseAltKeys = "yes"
 
 "set tags+=$HOME/.vim/tags/python.ctags
 colorscheme metacosm
@@ -107,6 +111,7 @@ inoremap <C-k> <ESC>
 nnoremap j gj
 nnoremap k gk
 nnoremap <space> za
+map <C-a> <ESC>ggvG$
 
 nnoremap <silent><F2> :NERDTreeToggle<CR>
 nnoremap <silent><F3> :FuzzyFinderTextMate<CR>
@@ -118,9 +123,6 @@ exec "nmap <F5> :source ~/".cfgfile."<CR>"
 nmap <silent><C-n> :tabnew<CR>
 nnoremap x :q<CR>
 nnoremap X :q!<CR>
-
-"map <C-x> <ESC>:call EnhancedCommentify('yes', 'guess')<CR>ji
-vmap <C-/> <ESC>:call EnhancedCommentify('yes', 'guess')<CR>
 
 imap <silent><C-Space> <ESC>l:RopeCodeAssist<CR>
 nmap <silent><C-Space> :RopeCodeAssist<CR>
