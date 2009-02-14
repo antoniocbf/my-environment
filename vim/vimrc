@@ -121,7 +121,7 @@ vmap <silent><F9> :call BexecVisual()<CR>
 exec "nmap <F5> :source ~/".cfgfile."<CR>"
 
 nmap <silent><C-n> :tabnew<CR>
-nnoremap x :q<CR>
+"nnoremap x :q<CR>
 nnoremap X :q!<CR>
 
 imap <silent><C-Space> <ESC>l:RopeCodeAssist<CR>
