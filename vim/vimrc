@@ -123,7 +123,7 @@ exec "nmap <F5> :source ~/".cfgfile."<CR>"
 
 nmap <silent><C-n> :tabnew<CR>
 "nnoremap x :q<CR>
-nnoremap X :q!<CR>
+nnoremap <silent><C-x> :q<CR>
 
 imap <silent><C-Space> <ESC>l:RopeCodeAssist<CR>
 nmap <silent><C-Space> :RopeCodeAssist<CR>
