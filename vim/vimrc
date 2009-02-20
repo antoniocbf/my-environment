@@ -63,6 +63,9 @@ let g:fuzzy_roots = ['./dev/java/workspace', './dev/python/workspace', './enviro
 let g:fuzzy_ignore = "*.bak,*.pyc,*.py~,*.pdf,*.so,*.gif,*.jpg,*.flv,*.class,*.png,*/tools/*,*/docs/*" 
 let g:fuzzy_ceiling = 50000
 let g:fuzzy_enumerating_limit = 25
+
+" NERDTree configuration
+let g:NERDTreeShowBookmarks=1
  
 set tags+=$HOME/.vim/tags/python.ctags
 colorscheme metacosm
