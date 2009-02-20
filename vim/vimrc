@@ -64,11 +64,7 @@ let g:fuzzy_ignore = "*.bak,*.pyc,*.py~,*.pdf,*.so,*.gif,*.jpg,*.flv,*.class,*.p
 let g:fuzzy_ceiling = 50000
 let g:fuzzy_enumerating_limit = 25
  
- 
-" EnhancedCommentify configuration
-let g:EnhCommentifyUseAltKeys = "yes"
-
-"set tags+=$HOME/.vim/tags/python.ctags
+set tags+=$HOME/.vim/tags/python.ctags
 colorscheme metacosm
 set anti
 set textwidth=0
@@ -113,7 +109,7 @@ nnoremap j gj
 nnoremap k gk
 nnoremap <space> za
 map <C-a> <ESC>ggvG$
-
+ 
 nnoremap <silent><F2> :NERDTreeToggle<CR>
 nnoremap <silent><F3> :FuzzyFinderTextMate<CR>
 nnoremap <silent><F8> :TlistToggle<CR>
@@ -122,8 +118,11 @@ vmap <silent><F9> :call BexecVisual()<CR>
 exec "nmap <F5> :source ~/".cfgfile."<CR>"
 
 nmap <silent><C-n> :tabnew<CR>
-"nnoremap x :q<CR>
-nnoremap <silent><C-x> :q<CR>
+nnoremap - :q<CR>
+
+map <silent><M-x> <plug>NERDCommenterToggle
+map <silent><M-c> <plug>NERDCommenterSexy
+map <silent><M-z> <plug>NERDCommenterMinimal
 
 imap <silent><C-Space> <ESC>l:RopeCodeAssist<CR>
 nmap <silent><C-Space> :RopeCodeAssist<CR>
