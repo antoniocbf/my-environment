@@ -21,7 +21,7 @@ endif
 
 if has("gui_gtk2")
     set guifont=Monospace\ 10
-    let vimpath = "~/l30-environment/vim"
+    let vimpath = "~/environment/vim"
     let cfgfile = ".vimrc"
 elseif has("gui_win32")
     set guifont=Consolas:h12
