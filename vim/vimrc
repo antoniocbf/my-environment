@@ -20,7 +20,7 @@ endif
 " *********************
 
 if has("gui_gtk2")
-    set guifont=Monospace\ 10
+    set guifont=Monospace\ 11
     let vimpath = "~/environment/vim"
     let cfgfile = ".vimrc"
 elseif has("gui_win32")
