@@ -96,7 +96,6 @@ set virtualedit=all
 set cursorline      " Highlight current line
 set smartcase       " Do smart case matching
 set mousemodel=popup
-set spellsuggest=fast
 syntax on
 
 " *****************
