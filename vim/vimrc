@@ -51,8 +51,9 @@ augroup mkd
 augroup END
 
 " AutoComplPop configuration
-let g:AutoComplPop_NotEnableAtStartup = 0
-let g:AutoComplPop_MappingDriven = 1
+let g:AutoComplPop_BehaviorKeywordLength=5
+let g:AutoComplPop_NotEnableAtStartup=0
+let g:AutoComplPop_MappingDriven=1
 
 " Ropevim configuration
 let ropevim_vim_completion=1
@@ -95,6 +96,7 @@ set virtualedit=all
 set cursorline      " Highlight current line
 set smartcase       " Do smart case matching
 set mousemodel=popup
+set spellsuggest=fast
 syntax on
 
 " *****************
