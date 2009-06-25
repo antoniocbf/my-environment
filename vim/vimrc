@@ -94,6 +94,7 @@ set guioptions-=T   " Turn toolbar off
 set virtualedit=all
 set cursorline      " Highlight current line
 set smartcase       " Do smart case matching
+set mousemodel=popup
 syntax on
 
 " *****************
@@ -116,6 +117,7 @@ map <C-a> <ESC>ggvG$
 nnoremap <silent><F2> :NERDTreeToggle<CR>
 nnoremap <silent><F3> :FuzzyFinderTextMate<CR>
 nnoremap <silent><F8> :TlistToggle<CR>
+nnoremap <silent><F4> :set spell spelllang=pt<CR>
 nmap <silent><F9> :call Bexec()<CR>
 vmap <silent><F9> :call BexecVisual()<CR>
 exec "nmap <F5> :source ~/".cfgfile."<CR>"
